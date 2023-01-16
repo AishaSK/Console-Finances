@@ -90,13 +90,13 @@ var finances = [
 let months = finances.length;
 let total = 0;
 let change = 0;
-let average ;
+var average = 0;
 let analysis;
 let net = 0;
 let netArray = [];
-let netChangeSum = [];
+let netChangeSum = 0;
 
-let least = ['', 99999999999999999 ];
+let least = ['', 99999999999999999n ];
 let greatest = ['', 0 ];
 
 for(let index = 0; index < finances.length; index++) {
@@ -117,9 +117,11 @@ for(let index = 0; index < finances.length; index++) {
     for (let index = 0; index < months; index++) {
         netChangeSum += netArray [index];
     }
-
-    average = Math.round ( (netChangeSum / finances.length ) * 100 ) /100;
-
+    average = netChangeSum / months;
+    console.log(average);
+    //average = Math.round ( (netChangeSum / finances.length ) * 100 ) /100;
+   var formattedAverage = Math.round( average * 100 )/100;
+      console.log(formattedAverage);
 
     analysis = 'Financial Analysis'  + '\n' + 
     '----------------------' + '\n'  +
